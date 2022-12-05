@@ -12,7 +12,9 @@
 
 # Запускать нужно так:
 
-Скачать папку Kopylov_Oleg_hw2, зайти в терминал и перейти в папку Kopylov_Oleg_hw2. Затем написать в терминале две команды:
+Скачать папку Kopylov_Oleg_hw2. Скачать zip-архив этой папки можно по ссылке https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FOleg13Kopylov%2Fnetworks-homework%2Ftree%2Fmain%2Flab2%2FKopylov_Oleg_hw2 
+
+зайти в терминал и перейти в папку Kopylov_Oleg_hw2. Затем написать в терминале две команды:
 
 1) docker build -t other_hw2_calc_mtu .
 
