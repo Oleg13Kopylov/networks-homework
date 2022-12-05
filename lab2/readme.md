@@ -12,11 +12,11 @@
 
 # Запускать нужно так:
 
-Перейти в папку Kopylov_Oleg_hw2, затем
+Скачать папку Kopylov_Oleg_hw2, зайти в терминал и перейти в папку Kopylov_Oleg_hw2. Затем написать в терминале две команды:
 
 1) docker build -t other_hw2_calc_mtu .
 
-2) docker run other_hw2_calc_mtu apache.org
+2) docker run other_hw2_calc_mtu **apache.org**
 
 **Во второй команде вместо apache.org можно ввести любой другой хост. Так пользователь может определять min MTU до разных хостов.**
 
