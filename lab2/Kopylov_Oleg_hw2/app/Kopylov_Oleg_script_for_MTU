@@ -1,0 +1,58 @@
+# KOPYLOV OLEG
+# I use binary search here
+# The answer will be the left bound
+
+# Now we specify host
+HOST="$@"
+
+echo "LOG: host is $HOST"
+echo "LOG: Checking if host is valid... Please, wait..."
+
+if ping -c 3 $HOST &> /dev/null
+then
+	echo "HOST seems to be OK IP-address. Process continues."
+else
+  echo "HOST seems to be INVALID IP-address. Process terminated."
+	exit
+fi
+
+LEFT=0
+RIGHT=1501
+MID=$(( ($LEFT + $RIGHT) / 2 ))
+
+echo "LOG : Starting binary search"
+
+NUMBER=1
+
+while [[ $LEFT -lt $MID ]]
+do
+	# Depending on the system, pings and mistakes might differ
+	# Here is for Ubuntu
+	echo "LOG: Binary search number $NUMBER"
+	NUMBER=$(( $NUMBER + 1 ))
+	echo "LOG: Please, wait, a ping in process..."
+	OUTPUT=$( ping -M do -c 3 -s $MID $HOST )
+	echo "LOG : OUTPUT : $OUTPUT"
+	echo ""
+
+	FIRST_ERROR=$( echo $OUTPUT | grep -c " 0 received" )
+	MID_IS_TOO_BIG=$(( $FIRST_ERROR ))
+
+	if [ $MID_IS_TOO_BIG -gt 0 ]
+	then
+		RIGHT=$MID
+		echo "LOG : Min MTU is less than $MID"
+	else
+		LEFT=$MID
+		echo "LOG : Min MTU is greater than or equal to $MID"
+	fi
+	MID=$(( ($LEFT + $RIGHT) / 2 ))
+done
+echo "LOG : Binary search finished! Answer was found!"
+echo ""
+echo "ANSWER: Min MTU is $MID($(( $MID + 28 )))"
+echo ""
+if [[ $MID -eq 0 ]]
+then
+echo "MTU = 0. It seems like host is NOT written correctly"
+fi
