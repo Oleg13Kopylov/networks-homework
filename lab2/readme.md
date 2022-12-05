@@ -10,3 +10,8 @@
 Примеры некорректных хостов: 11.com
 
 # Запускать нужно так:
+1) docker build -t other_hw2_calc_mtu .
+
+2) docker run other_hw2_calc_mtu apache.org
+
+Во второй команде вместо apache.org можно ввести любой другой хост
