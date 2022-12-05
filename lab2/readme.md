@@ -12,7 +12,7 @@
 
 # Запускать нужно так:
 
-Скачать папку Kopylov_Oleg_hw2. Скачать zip-архив этой папки можно по ссылке https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FOleg13Kopylov%2Fnetworks-homework%2Ftree%2Fmain%2Flab2%2FKopylov_Oleg_hw2 . Разахивировать папку.
+Скачать папку Kopylov_Oleg_hw2. Например, качать zip-архив этой папки можно по ссылке https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2FOleg13Kopylov%2Fnetworks-homework%2Ftree%2Fmain%2Flab2%2FKopylov_Oleg_hw2 . Разахивировать скачанный архив.
 
 Зайти в терминал и перейти в папку Kopylov_Oleg_hw2 (при способе скачивания через ссылку выше эта папка будет называться Oleg13Kopylov networks-homework main lab2-Kopylov_Oleg_hw2). Затем написать в терминале две команды:
 
