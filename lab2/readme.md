@@ -1,3 +1,4 @@
+# Общая информация
 
 В папке Kopylov_Oleg_hw2 лежит Dockerfile и папка app, в которой находится скрипт на bash. Скрипт называется Kopylov_Oleg_script_for_MTU.
 
@@ -18,3 +19,5 @@
 2) docker run other_hw2_calc_mtu apache.org
 
 Во второй команде вместо apache.org можно ввести любой другой хост
+
+# Пример работы
