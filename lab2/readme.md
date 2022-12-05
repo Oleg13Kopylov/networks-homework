@@ -25,3 +25,4 @@
 
 В файле output_invalid_host.txt пример вывода программы при некорректном хосте 11.com
 
+<img width="1440" alt="Screenshot 2022-12-05 at 16 31 33" src="https://user-images.githubusercontent.com/55313421/205649387-bb998955-b3dc-45e3-91c7-dba58995e3d4.png">
