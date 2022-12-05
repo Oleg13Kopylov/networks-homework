@@ -1,0 +1,4 @@
+olegkopylov@Olegs-MacBook-Air Kopylov_Oleg_hw2 % docker run other_hw2_calc_mtu 11.com    
+LOG: host is 11.com
+LOG: Checking if host is valid... Please, wait...
+HOST seems to be INVALID IP-address. Process terminated.

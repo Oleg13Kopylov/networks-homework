@@ -1,0 +1,149 @@
+olegkopylov@Olegs-MacBook-Air Kopylov_Oleg_hw2 % docker build -t other_hw2_calc_mtu .
+[+] Building 0.1s (10/10) FINISHED                                              
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 37B                                        0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest           0.0s
+ => [internal] load build context                                          0.0s
+ => => transferring context: 693B                                          0.0s
+ => [1/5] FROM docker.io/library/ubuntu                                    0.0s
+ => CACHED [2/5] WORKDIR /usr/src/app                                      0.0s
+ => CACHED [3/5] RUN apt-get update -y                                     0.0s
+ => CACHED [4/5] RUN apt-get install -y iputils-ping                       0.0s
+ => CACHED [5/5] COPY ./app .                                              0.0s
+ => exporting to image                                                     0.0s
+ => => exporting layers                                                    0.0s
+ => => writing image sha256:07d22d18e99489a962199a407a9c35e8182db9f210ab8  0.0s
+ => => naming to docker.io/library/other_hw2_calc_mtu                      0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+olegkopylov@Olegs-MacBook-Air Kopylov_Oleg_hw2 % docker run other_hw2_calc_mtu apache.org
+LOG: host is apache.org
+LOG: Checking if host is valid... Please, wait...
+HOST seems to be OK IP-address. Process continues.
+LOG : Starting binary search
+LOG: Binary search number 1
+LOG: Please, wait, a ping in process...
+LOG : OUTPUT : PING apache.org (151.101.2.132) 750(778) bytes of data.
+758 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=1 ttl=37 time=43.8 ms
+758 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=2 ttl=37 time=58.5 ms
+758 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=3 ttl=37 time=52.2 ms
+
+--- apache.org ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2008ms
+rtt min/avg/max/mdev = 43.840/51.518/58.491/6.002 ms
+
+LOG : Min MTU is greater than or equal to 750
+LOG: Binary search number 2
+LOG: Please, wait, a ping in process...
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1125(1153) bytes of data.
+1133 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=1 ttl=37 time=51.6 ms
+1133 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=2 ttl=37 time=120 ms
+1133 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=3 ttl=37 time=48.0 ms
+
+--- apache.org ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2013ms
+rtt min/avg/max/mdev = 48.008/73.193/120.010/33.136 ms
+
+LOG : Min MTU is greater than or equal to 1125
+LOG: Binary search number 3
+LOG: Please, wait, a ping in process...
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1313(1341) bytes of data.
+1321 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=1 ttl=37 time=44.2 ms
+1321 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=2 ttl=37 time=45.4 ms
+1321 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=3 ttl=37 time=46.2 ms
+
+--- apache.org ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2012ms
+rtt min/avg/max/mdev = 44.230/45.278/46.234/0.820 ms
+
+LOG : Min MTU is greater than or equal to 1313
+LOG: Binary search number 4
+LOG: Please, wait, a ping in process...
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1407(1435) bytes of data.
+1415 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=1 ttl=37 time=45.9 ms
+1415 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=2 ttl=37 time=57.1 ms
+
+--- apache.org ping statistics ---
+3 packets transmitted, 2 received, 33.3333% packet loss, time 2010ms
+rtt min/avg/max/mdev = 45.890/51.491/57.093/5.601 ms
+
+LOG : Min MTU is greater than or equal to 1407
+LOG: Binary search number 5
+LOG: Please, wait, a ping in process...
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1454(1482) bytes of data.
+1462 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=1 ttl=37 time=44.0 ms
+
+--- apache.org ping statistics ---
+3 packets transmitted, 1 received, 66.6667% packet loss, time 2031ms
+rtt min/avg/max/mdev = 44.047/44.047/44.047/0.000 ms
+
+LOG : Min MTU is greater than or equal to 1454
+LOG: Binary search number 6
+LOG: Please, wait, a ping in process...
+ping: local error: message too long, mtu=1500
+ping: local error: message too long, mtu=1500
+ping: local error: message too long, mtu=1500
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1477(1505) bytes of data.
+
+--- apache.org ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2043ms
+
+LOG : Min MTU is less than 1477
+LOG: Binary search number 7
+LOG: Please, wait, a ping in process...
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1465(1493) bytes of data.
+1473 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=2 ttl=37 time=47.0 ms
+1473 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=3 ttl=37 time=60.7 ms
+
+--- apache.org ping statistics ---
+3 packets transmitted, 2 received, 33.3333% packet loss, time 2007ms
+rtt min/avg/max/mdev = 46.995/53.839/60.683/6.844 ms
+
+LOG : Min MTU is greater than or equal to 1465
+LOG: Binary search number 8
+LOG: Please, wait, a ping in process...
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1471(1499) bytes of data.
+1479 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=1 ttl=37 time=45.9 ms
+
+--- apache.org ping statistics ---
+3 packets transmitted, 1 received, 66.6667% packet loss, time 2007ms
+rtt min/avg/max/mdev = 45.900/45.900/45.900/0.000 ms
+
+LOG : Min MTU is greater than or equal to 1471
+LOG: Binary search number 9
+LOG: Please, wait, a ping in process...
+ping: local error: message too long, mtu=1500
+ping: local error: message too long, mtu=1500
+ping: local error: message too long, mtu=1500
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1474(1502) bytes of data.
+
+--- apache.org ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2051ms
+
+LOG : Min MTU is less than 1474
+LOG: Binary search number 10
+LOG: Please, wait, a ping in process...
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1472(1500) bytes of data.
+1480 bytes from 151.101.2.132 (151.101.2.132): icmp_seq=3 ttl=37 time=45.1 ms
+
+--- apache.org ping statistics ---
+3 packets transmitted, 1 received, 66.6667% packet loss, time 2089ms
+rtt min/avg/max/mdev = 45.075/45.075/45.075/0.000 ms
+
+LOG : Min MTU is greater than or equal to 1472
+LOG: Binary search number 11
+LOG: Please, wait, a ping in process...
+ping: local error: message too long, mtu=1500
+ping: local error: message too long, mtu=1500
+ping: local error: message too long, mtu=1500
+LOG : OUTPUT : PING apache.org (151.101.2.132) 1473(1501) bytes of data.
+
+--- apache.org ping statistics ---
+3 packets transmitted, 0 received, +3 errors, 100% packet loss, time 2077ms
+
+LOG : Min MTU is less than 1473
+LOG : Binary search finished! Answer was found!
+
+ANSWER: Min MTU is 1472(1500)
