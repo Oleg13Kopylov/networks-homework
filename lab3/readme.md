@@ -1,3 +1,10 @@
+## Скриншоты
+![telegram-cloud-photo-size-2-5231445955700704046-x](https://user-images.githubusercontent.com/55313421/206730623-b4e6251b-b28c-41c4-99af-bc88c937507d.jpg)
+
+![telegram-cloud-photo-size-2-5231445955700704048-y](https://user-images.githubusercontent.com/55313421/206730826-b2ceb2b5-d5f1-4671-9120-267af57f8707.jpg)
+
+
+
 ## Описание модернизации сети
 
 К лаборатории из папки lab1 (она соответствует первому домашнему заданию) были применены следующие изменения:
@@ -72,10 +79,3 @@ Router#wr
 Building configuration...
 [OK]
 ```
-
-## Скриншоты
-![telegram-cloud-photo-size-2-5231445955700704046-x](https://user-images.githubusercontent.com/55313421/206730623-b4e6251b-b28c-41c4-99af-bc88c937507d.jpg)
-
-![telegram-cloud-photo-size-2-5231445955700704048-y](https://user-images.githubusercontent.com/55313421/206730826-b2ceb2b5-d5f1-4671-9120-267af57f8707.jpg)
-
-
